@@ -1,202 +1,394 @@
-# Talento Tech - Node.js
+# 🚀 Talento Tech — Node.js
 
-Aplicación de línea de comandos desarrollada con **Node.js** como parte de la formación de **Talento Tech**.
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-24.x-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/API-Fake%20Store-6C63FF?style=for-the-badge" alt="Fake Store API">
+  <img src="https://img.shields.io/badge/Status-Completed-2EA44F?style=for-the-badge" alt="Status">
+</p>
 
-El proyecto permite interactuar con la API pública de **Fake Store API** para consultar, crear y eliminar productos.
+<p align="center">
+  <b>Aplicación CLI desarrollada con Node.js para consumir una API REST.</b>
+</p>
 
-## Tecnologías utilizadas
+<p align="center">
+  <a href="https://github.com/franjavi1/Talento-Tech-Node-Js">
+    🔗 Ver repositorio
+  </a>
+</p>
 
-* Node.js
-* JavaScript
-* Fetch API
-* Fake Store API
-* ES Modules
+---
 
-El proyecto utiliza `"type": "module"` para trabajar con `import` y `export`.
+## 🧩 ¿De qué trata?
 
-## Estructura del proyecto
+Este proyecto fue desarrollado como parte de la formación **Talento Tech — Node.js**.
+
+La aplicación permite interactuar con la **Fake Store API** directamente desde la terminal utilizando comandos.
+
+La idea principal es practicar cómo una aplicación Node.js puede:
 
 ```text
-Talento-Tech-Node-Js/
-│
-├── index.js
-├── funciones.js
-├── package.json
-└── README.md
+        👨‍💻 Usuario
+             │
+             ▼
+       💻 Terminal
+             │
+             ▼
+       📦 Node.js
+             │
+       ┌─────┴─────┐
+       │           │
+      GET         POST
+       │           │
+       └─────┬─────┘
+             │
+             ▼
+      🌐 Fake Store API
+             │
+             ▼
+        📦 Productos
 ```
 
-### `index.js`
+---
 
-Es el archivo principal de la aplicación.
+## ⚡ Funcionalidades
 
-Recibe los argumentos ingresados desde la terminal y determina qué operación realizar:
+|    Método   | Función                     | Ejemplo             |
+| :---------: | --------------------------- | ------------------- |
+|   🟢 `GET`  | Obtener todos los productos | `GET products`      |
+|   🔵 `GET`  | Obtener un producto         | `GET products/7`    |
+|  🟡 `POST`  | Crear un producto           | `POST products ...` |
+| 🔴 `DELETE` | Eliminar un producto        | `DELETE products/5` |
 
-* GET todos los productos
-* GET un producto por ID
-* POST crear un producto
-* DELETE eliminar un producto
+---
 
-### `funciones.js`
+## 🛠️ Tecnologías
 
-Contiene las funciones encargadas de realizar las peticiones a la API:
+<p align="center">
 
-* `getProducts()`
-* `getProduct(id)`
-* `postProduct(title, price, category)`
-* `deleteProduct(id)`
+| Tecnología            | Uso                           |
+| --------------------- | ----------------------------- |
+| 🟢 **Node.js**        | Entorno de ejecución          |
+| 🟡 **JavaScript**     | Lenguaje principal            |
+| 🌐 **Fetch API**      | Peticiones HTTP               |
+| 🛒 **Fake Store API** | API REST utilizada            |
+| 📦 **ES Modules**     | Organización de módulos       |
+| 💻 **CLI**            | Interacción mediante terminal |
 
-Estas funciones utilizan `fetch()` para comunicarse con Fake Store API.
+</p>
 
-## Instalación
+---
 
-Clonar el repositorio:
+## 📁 Estructura del proyecto
+
+```text
+📦 Talento-Tech-Node-Js
+│
+├── 📄 index.js
+│   └── Punto de entrada de la aplicación
+│
+├── 📄 funciones.js
+│   └── Funciones para consumir la API
+│
+├── 📄 package.json
+│   └── Configuración y scripts del proyecto
+│
+└── 📄 README.md
+    └── Documentación
+```
+
+---
+
+# 🚀 Instalación
+
+### 1️⃣ Clonar el repositorio
 
 ```bash
 git clone https://github.com/franjavi1/Talento-Tech-Node-Js.git
 ```
 
-Ingresar a la carpeta:
+### 2️⃣ Entrar al proyecto
 
 ```bash
 cd Talento-Tech-Node-Js
 ```
 
-No es necesario instalar dependencias externas para ejecutar el proyecto.
-
-## Ejecución
-
-El proyecto incluye el siguiente script:
+### 3️⃣ Ejecutar
 
 ```bash
 npm start
 ```
 
-También puede ejecutarse directamente con:
+También podés ejecutar directamente:
 
 ```bash
 node index.js
 ```
 
-## Operaciones disponibles
+---
 
-### Obtener todos los productos
+# 🎮 Uso
+
+La aplicación recibe los comandos directamente desde la terminal.
+
+La estructura general es:
+
+```text
+npm start MÉTODO RECURSO [PARÁMETROS]
+```
+
+Por ejemplo:
+
+```text
+npm start GET products
+       │    │     │
+       │    │     └── Recurso
+       │    └──────── Método HTTP
+       └───────────── Script
+```
+
+---
+
+# 🟢 GET — Obtener productos
+
+## Obtener todos
 
 ```bash
 npm start GET products
 ```
 
-También:
+La aplicación realiza una petición:
 
-```bash
-node index.js GET products
+```text
+GET
+ │
+ ▼
+https://fakestoreapi.com/products
+ │
+ ▼
+📦 Lista de productos
 ```
 
-### Obtener un producto por ID
+---
+
+## 🔎 Obtener un producto
+
+Para obtener un producto específico:
 
 ```bash
 npm start GET products/7
 ```
 
-Por ejemplo:
-
-```bash
-npm start GET products/1
-```
-
-### Crear un producto
-
-La aplicación recibe:
+En este caso:
 
 ```text
-POST products título precio categoría
+GET
+ │
+ ▼
+products/7
+ │
+ ▼
+Producto con ID 7
 ```
 
-Ejemplo:
+---
+
+# 🟡 POST — Crear un producto
+
+Para crear un producto:
 
 ```bash
 npm start POST products T-Shirt-Rex 300 remeras
 ```
 
-El precio se convierte a número antes de enviarse a la API.
+Los datos enviados son:
 
-### Eliminar un producto
+```text
+Título     → T-Shirt-Rex
+Precio     → 300
+Categoría  → remeras
+```
+
+La aplicación prepara los datos y realiza una petición:
+
+```text
+💻 Terminal
+     │
+     ▼
+   POST
+     │
+     ▼
+🌐 Fake Store API
+     │
+     ▼
+📦 Nuevo producto
+```
+
+---
+
+# 🔴 DELETE — Eliminar un producto
+
+Para eliminar un producto:
 
 ```bash
 npm start DELETE products/5
 ```
 
-Por ejemplo:
-
-```bash
-npm start DELETE products/10
-```
-
-## Funcionamiento
-
-La aplicación obtiene los argumentos enviados desde la terminal mediante:
-
-```javascript
-process.argv.slice(2)
-```
-
-Luego identifica:
+El flujo es:
 
 ```text
-Método → Recurso → Parámetros
+DELETE
+   │
+   ▼
+products/5
+   │
+   ▼
+🗑️ Producto eliminado
 ```
 
-Por ejemplo:
+---
+
+# 🧠 Conceptos practicados
+
+Este proyecto permite practicar conceptos fundamentales de Node.js:
+
+* 🟢 `process.argv`
+* 🟢 `async / await`
+* 🟢 `fetch()`
+* 🟢 Promesas
+* 🟢 Métodos HTTP
+* 🟢 Consumo de APIs REST
+* 🟢 `try / catch`
+* 🟢 `finally`
+* 🟢 ES Modules
+* 🟢 `import` / `export`
+* 🟢 Argumentos desde la terminal
+* 🟢 Manejo de respuestas HTTP
+
+---
+
+# 🔍 ¿Cómo funciona `process.argv`?
+
+Cuando ejecutamos:
 
 ```bash
 npm start GET products/7
 ```
 
-se interpreta como:
+Node recibe los argumentos enviados desde la terminal.
 
-```text
-Método:   GET
-Recurso:  products/7
-ID:       7
+Conceptualmente:
+
+```javascript
+process.argv
 ```
 
-A partir de estos datos, `index.js` determina qué función ejecutar.
+contiene información sobre la ejecución.
 
-## API utilizada
+Al utilizar:
 
-El proyecto utiliza **Fake Store API**:
+```javascript
+process.argv.slice(2)
+```
+
+obtenemos solamente los argumentos que nos interesan:
+
+```javascript
+[
+  "GET",
+  "products/7"
+]
+```
+
+Entonces la aplicación puede determinar:
+
+```text
+Método  → GET
+Recurso → products/7
+```
+
+---
+
+# 🏗️ Arquitectura simplificada
+
+```text
+                 👨‍💻
+              USUARIO
+                 │
+                 ▼
+             💻 CLI
+                 │
+                 ▼
+             index.js
+                 │
+          ┌──────┴──────┐
+          │             │
+          ▼             ▼
+     process.argv   funciones.js
+                        │
+                        ▼
+                     fetch()
+                        │
+                        ▼
+                🌐 Fake Store API
+                        │
+                        ▼
+                  📦 Productos
+```
+
+---
+
+# 🌐 API utilizada
+
+El proyecto utiliza:
+
+**Fake Store API**
 
 ```text
 https://fakestoreapi.com/products
 ```
 
-Las operaciones implementadas utilizan los siguientes métodos HTTP:
+Esta API permite trabajar con productos de prueba y es muy útil para practicar el consumo de APIs REST.
 
-| Método | Operación                   |
-| ------ | --------------------------- |
-| GET    | Obtener todos los productos |
-| GET    | Obtener un producto por ID  |
-| POST   | Crear un producto           |
-| DELETE | Eliminar un producto        |
+---
 
-## Objetivo del proyecto
+# 📚 Objetivo del proyecto
 
-El objetivo es practicar conceptos fundamentales de Node.js, incluyendo:
+El objetivo principal es comprender cómo desarrollar una aplicación con **Node.js** capaz de comunicarse con una API externa.
 
-* Ejecución de aplicaciones desde la terminal.
-* Uso de `process.argv`.
-* Módulos ES (`import` / `export`).
-* Funciones asíncronas.
-* `async/await`.
-* Consumo de APIs.
-* Uso de `fetch()`.
-* Métodos HTTP.
-* Envío de datos mediante `POST`.
-* Eliminación de recursos mediante `DELETE`.
-* Manejo de errores con `try/catch`.
-* Uso de `finally`.
+El proyecto sirve como práctica de los primeros conceptos de desarrollo backend:
 
-## Autor
+```text
+JavaScript
+    ↓
+Node.js
+    ↓
+HTTP
+    ↓
+API REST
+    ↓
+Datos JSON
+```
 
-**Francisco Javier Stevenin**
+---
 
-Proyecto realizado como parte de la formación **Talento Tech - Node.js**.
+# 👨‍💻 Autor
+
+### Francisco Javier Stevenin
+
+🎓 Proyecto realizado durante la formación **Talento Tech — Node.js**
+
+🔗 GitHub:
+
+https://github.com/franjavi1
+
+---
+
+<p align="center">
+
+### ⭐ Si este proyecto te resulta útil, podés darle una estrella al repositorio.
+
+**🚀 Node.js · JavaScript · REST API · CLI**
+
+</p>
+
